@@ -1,16 +1,18 @@
 terraform {
   backend "s3" {
-    bucket       = "aakash-k8s-devsecops-tf-state"
-    region       = "us-east-1"
-    key          = "End-to-End-Kubernetes-DevSecOps-Tetris-Project/EKS-TF/terraform.tfstate"
-    use_lockfile = true
-    encrypt      = true
+    bucket         = "aakash-k8s-devsecops-tf-state"
+    key            = "End-to-End-Kubernetes-DevSecOps-Tetris-Project/EKS-TF/terraform.tfstate"
+    region         = "ap-south-1"
+    encrypt        = true
+    dynamodb_table = "terraform-lock-table"
   }
-  required_version = ">=1.14.0"
+
+  required_version = ">= 1.14.0"
+  
   required_providers {
     aws = {
-      version = ">= 5.49.0"
       source  = "hashicorp/aws"
+      version = ">= 5.49.0"
     }
   }
 }
