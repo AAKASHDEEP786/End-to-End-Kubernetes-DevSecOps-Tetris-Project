@@ -1,0 +1,17 @@
+# Terraform files
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+
+# Variable files (sensitive data)
+# *.tfvars
+
+# Crash logs
+crash.log
+
+# Optional: override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
